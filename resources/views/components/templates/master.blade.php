@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <titel>{{ config('app.name') }}</titel>
+        <title>{{ config('app.name') }}</title>
 
         {{-- Fonts --}}
         <link rel="preconnect" href="https://rsms.me">
@@ -17,6 +17,8 @@
     </head>
 
     <body class="min-h-screen">
+        {{ $slot }}
+
         {{-- Scripts --}}
         @stack('scripts')
     </body>
