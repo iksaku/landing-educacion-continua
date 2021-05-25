@@ -19,6 +19,8 @@
     <body class="min-h-screen">
         {{ $slot }}
 
+        @stack('dialogs')
+
         {{-- Scripts --}}
         @stack('scripts')
     </body>

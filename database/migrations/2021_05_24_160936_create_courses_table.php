@@ -26,8 +26,7 @@ class CreateCoursesTable extends Migration
             $table->tinyText('description');
             $table->string('image');
             $table->unsignedTinyInteger('duration');
-            $table->unsignedDecimal('cost_for_students');
-            $table->unsignedDecimal('cost_for_non_students');
+            $table->json('costs')->default(DB::raw('(JSON_OBJECT())'));
             $table->foreignId('course_type_id')
                 ->constrained()
                 ->cascadeOnDelete();
@@ -44,6 +43,18 @@ class CreateCoursesTable extends Migration
                 ->cascadeOnDelete();
             $table->timestamps();
         });
+
+        Schema::create('course_registrations', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->unsignedTinyInteger('age');
+            $table->string('phone');
+            $table->foreignId('course_id')
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -53,6 +64,9 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('course_types');
         Schema::dropIfExists('courses');
+        Schema::dropIfExists('course_schedules');
+        Schema::dropIfExists('course_registrations');
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1dfc6c05dc7b5513a810ceb4e7f4dba9",
+    "content-hash": "5271e0dad3f9ab04a2b71f01048714ac",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -114,6 +114,151 @@
                 "source": "https://github.com/Bacon/BaconQrCode/tree/2.0.3"
             },
             "time": "2020-10-30T02:02:47+00:00"
+        },
+        {
+            "name": "blade-ui-kit/blade-heroicons",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blade-ui-kit/blade-heroicons.git",
+                "reference": "99d82616a72e36492edc9b95c6a2112d8632e9a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-heroicons/zipball/99d82616a72e36492edc9b95c6a2112d8632e9a7",
+                "reference": "99d82616a72e36492edc9b95c6a2112d8632e9a7",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.0",
+                "illuminate/support": "^8.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeUI\\Heroicons\\BladeHeroiconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BladeUI\\Heroicons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A package to easily make use of Heroicons in your Laravel Blade views.",
+            "homepage": "https://github.com/blade-ui-kit/blade-heroicons",
+            "keywords": [
+                "Heroicons",
+                "blade",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/blade-ui-kit/blade-heroicons/issues",
+                "source": "https://github.com/blade-ui-kit/blade-heroicons/tree/1.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/caneco",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/driesvints",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-05-05T14:59:46+00:00"
+        },
+        {
+            "name": "blade-ui-kit/blade-icons",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blade-ui-kit/blade-icons.git",
+                "reference": "716c3991efb77389046785ff87a9565aceda8657"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blade-ui-kit/blade-icons/zipball/716c3991efb77389046785ff87a9565aceda8657",
+                "reference": "716c3991efb77389046785ff87a9565aceda8657",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.0",
+                "illuminate/filesystem": "^8.0",
+                "illuminate/support": "^8.0",
+                "illuminate/view": "^8.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BladeUI\\Icons\\BladeIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BladeUI\\Icons\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A package to easily make use of icons in your Laravel Blade views.",
+            "homepage": "https://github.com/blade-ui-kit/blade-icons",
+            "keywords": [
+                "blade",
+                "icons",
+                "laravel",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/blade-ui-kit/blade-icons/issues",
+                "source": "https://github.com/blade-ui-kit/blade-icons"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/caneco",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/driesvints",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-03T19:08:34+00:00"
         },
         {
             "name": "brick/math",
@@ -1009,16 +1154,16 @@
         },
         {
             "name": "laravel/fortify",
-            "version": "v1.7.12",
+            "version": "v1.7.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/fortify.git",
-                "reference": "b45807430194c73aaa9b2f26cb76038cc747466f"
+                "reference": "1753d05c80f930cc2715051858900965b49f32d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/fortify/zipball/b45807430194c73aaa9b2f26cb76038cc747466f",
-                "reference": "b45807430194c73aaa9b2f26cb76038cc747466f",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/1753d05c80f930cc2715051858900965b49f32d9",
+                "reference": "1753d05c80f930cc2715051858900965b49f32d9",
                 "shasum": ""
             },
             "require": {
@@ -1068,20 +1213,20 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
-            "time": "2021-04-27T17:56:34+00:00"
+            "time": "2021-05-25T16:35:21+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v8.42.1",
+            "version": "v8.43.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "41ec4897a70eb8729cf0ff34a8354413c54e42a6"
+                "reference": "3ec63771a07e251f4fb6c7ef2411a79a314bba65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/41ec4897a70eb8729cf0ff34a8354413c54e42a6",
-                "reference": "41ec4897a70eb8729cf0ff34a8354413c54e42a6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3ec63771a07e251f4fb6c7ef2411a79a314bba65",
+                "reference": "3ec63771a07e251f4fb6c7ef2411a79a314bba65",
                 "shasum": ""
             },
             "require": {
@@ -1236,7 +1381,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-05-19T13:03:18+00:00"
+            "time": "2021-05-25T13:06:44+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2581,16 +2726,16 @@
         },
         {
             "name": "radio/radio",
-            "version": "v0.1.1",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/radio-js/radio.git",
-                "reference": "bad4628eb0d4c4bf2c673fc773e5edb35cab1d6f"
+                "reference": "b79f70a4886149aa05b6e55da8e67aba0464d840"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/radio-js/radio/zipball/bad4628eb0d4c4bf2c673fc773e5edb35cab1d6f",
-                "reference": "bad4628eb0d4c4bf2c673fc773e5edb35cab1d6f",
+                "url": "https://api.github.com/repos/radio-js/radio/zipball/b79f70a4886149aa05b6e55da8e67aba0464d840",
+                "reference": "b79f70a4886149aa05b6e55da8e67aba0464d840",
                 "shasum": ""
             },
             "require": {
@@ -2601,10 +2746,10 @@
                 "spatie/laravel-package-tools": "^1.7"
             },
             "require-dev": {
-                "orchestra/testbench": "^6.0",
                 "orchestra/testbench-dusk": "^6.17",
                 "phpunit/phpunit": "^9.5"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2628,9 +2773,19 @@
             "description": "A component-centric backend communication layer for Alpine.js.",
             "support": {
                 "issues": "https://github.com/radio-js/radio/issues",
-                "source": "https://github.com/radio-js/radio/tree/v0.1.1"
+                "source": "https://github.com/radio-js/radio/tree/main"
             },
-            "time": "2021-05-19T07:52:02+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/danharrin",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/ryangjchandler",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-05-21T16:33:49+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5819,16 +5974,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "5d23474cd411b07f46980d05f9c38e7dc0d17460"
+                "reference": "d1f703d73f782af5427697cdc5023395cd341963"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/5d23474cd411b07f46980d05f9c38e7dc0d17460",
-                "reference": "5d23474cd411b07f46980d05f9c38e7dc0d17460",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/d1f703d73f782af5427697cdc5023395cd341963",
+                "reference": "d1f703d73f782af5427697cdc5023395cd341963",
                 "shasum": ""
             },
             "require": {
@@ -5875,7 +6030,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2021-05-18T15:44:02+00:00"
+            "time": "2021-05-25T16:41:13+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -7797,7 +7952,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "radio/radio": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

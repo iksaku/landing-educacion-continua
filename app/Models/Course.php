@@ -13,14 +13,20 @@ class Course extends Model
         'description',
         'image',
         'duration',
-        'cost_for_students',
-        'cost_for_non_students',
+        'costs',
     ];
 
     protected $casts = [
         'duration' => 'integer',
-        'cost_for_students' => 'float',
-        'cost_for_non_students' => 'float',
+        'costs' => 'json',
+    ];
+
+    protected $visible = [
+        'name',
+        'description',
+        'duration',
+        'costs',
+        'schedules',
     ];
 
     public function type(): BelongsTo
@@ -31,5 +37,25 @@ class Course extends Model
     public function schedules(): HasMany
     {
         return $this->hasMany(CourseSchedule::class);
+    }
+
+    public function registrations(): HasMany
+    {
+        return $this->hasMany(CourseRegistration::class);
+    }
+
+    public function toArray()
+    {
+        $data = parent::toArray();
+
+        if (count($data['schedules'] ?? []) > 0) {
+            $schedules = collect($data['schedules'])
+                ->groupBy('day')
+                ->toArray();
+
+            $data['schedules'] = $schedules;
+        }
+
+        return $data;
     }
 }

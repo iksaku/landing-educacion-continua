@@ -17,9 +17,15 @@ class CourseSchedule extends Model
         'day' => 'integer',
     ];
 
-    public function getWeekDayAttribute(): string
+    protected $visible = [
+        'day',
+        'starts_at',
+        'ends_at',
+    ];
+
+    public function getDayAttribute(int $value): string
     {
-        return match($this->day) {
+        return match($value) {
             Carbon::SUNDAY => 'Domingo',
             Carbon::MONDAY => 'Lunes',
             Carbon::TUESDAY => 'Martes',

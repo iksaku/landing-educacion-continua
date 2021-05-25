@@ -12,7 +12,7 @@
                             <div class="flex items-center justify-between w-full md:w-auto">
                                 <a href="{{ route('index') }}">
                                     <span class="sr-only">Educación Continua</span>
-                                    <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg">
+                                    <img class="w-auto h-8 sm:h-10" src="{{ asset('img/logo.jpg') }}">
                                 </a>
                                 <div class="-mr-2 flex items-center md:hidden">
                                     <button
@@ -22,10 +22,7 @@
                                         @click="isOpen = true"
                                     >
                                         <span class="sr-only">Abrir menú principal</span>
-                                        <!-- Heroicon name: outline/menu -->
-                                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                        </svg>
+                                        <x-heroicon-o-menu class="w-6 h-6" />
                                     </button>
                                 </div>
                             </div>
@@ -57,7 +54,7 @@
                     <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div class="px-5 pt-4 flex items-center justify-between">
                             <div>
-                                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+                                <img class="w-auto h-8" src="{{ asset('img/logo.jpg') }}">
                             </div>
                             <div class="-mr-2">
                                 <button
@@ -66,10 +63,7 @@
                                     @click="isOpen = false"
                                 >
                                     <span class="sr-only">Cerrar menú principal</span>
-                                    <!-- Heroicon name: outline/x -->
-                                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
+                                    <x-heroicon-o-x class="w-6 h-6" />
                                 </button>
                             </div>
                         </div>
