@@ -41,6 +41,7 @@
                     dispatch(event, detail) {
                         const dispatched = new CustomEvent(event, {
                             bubbles: true,
+                            cancelable: true,
                             detail
                         })
 

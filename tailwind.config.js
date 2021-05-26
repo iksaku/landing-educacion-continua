@@ -12,10 +12,19 @@ module.exports = {
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
             },
+            keyframes: {
+                spin: {
+                    to: {
+                        transform: 'rotate(-360deg)',
+                    },
+                },
+            },
         },
     },
     variants: {
         extend: {},
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/forms')
+    ],
 }

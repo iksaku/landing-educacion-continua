@@ -27,7 +27,7 @@ class CourseRegistration
             'course_id' => ['required', 'integer'],
             'name' => ['required', 'string'],
             'email' => ['required', 'email'],
-            'age' => ['required', 'integer', 'min:0'],
+            'age' => ['required', 'integer', 'min:1'],
             'phone' => ['required', 'string']
         ], [
             'course_id' => [

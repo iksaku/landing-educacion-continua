@@ -18,6 +18,7 @@
         <div x-show="isLoading" class="flex items-center justify-center">
             <x-heroicon-o-refresh class="h-8 w-8 animate-spin" />
         </div>
+
         <div x-show="!isLoading" class="contents">
             @if($closeable)
                 <div class="block absolute top-0 right-0 pt-4 pr-4">
