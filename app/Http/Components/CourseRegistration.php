@@ -77,6 +77,6 @@ class CourseRegistration
 
         $registration->save();
 
-        $this->dispatchEvent('successfully-registered-to-course');
+        $this->dispatchEvent('successful-registration');
     }
 }

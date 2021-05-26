@@ -38,6 +38,7 @@
             event="course-information"
             x-data="{ ...courseInformationComponent(), ...{!! htmlspecialchars_decode(Radio\radio(App\Http\Components\CourseInformation::class)) !!}}"
             x-on:dialog-open="onOpen($event)"
+            x-on:successful-registration.window="close($event)"
         >
             <div class="space-y-4">
                 <x-slot name="title">
@@ -164,6 +165,18 @@
                     </button>
                 </div>
             </form>
+        </x-dialog.modal>
+
+        <x-dialog.modal event="successful-registration">
+            <x-slot name="icon">
+                <x-heroicon-s-check-circle class="w-12 h-12 text-green-400" />
+            </x-slot>
+
+            <x-slot name="title">
+                ¡Gracias por registrarte!
+            </x-slot>
+
+            Próximamente nos contactaremos contigo con más información sobre el curso.
         </x-dialog.modal>
     @endpush
 
