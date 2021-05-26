@@ -56,6 +56,14 @@ class Course extends Model
             $data['schedules'] = $schedules;
         }
 
+        if (count($data['costs'] ?? []) > 0) {
+            $costs = collect($data['costs'])
+                ->map(fn(int $cost) => '$' . number_format($cost))
+                ->toArray();
+
+            $data['costs'] = $costs;
+        }
+
         return $data;
     }
 }

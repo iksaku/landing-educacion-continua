@@ -86,7 +86,7 @@
                     >
                         <div class="flex divide-x divide-green-300">
                             <p class="w-1/3 px-4 py-2" x-text="subject"></p>
-                            <p class="px-4 py-2" x-text="subject"></p>
+                            <p class="px-4 py-2" x-text="cost"></p>
                         </div>
                     </template>
                 </div>
