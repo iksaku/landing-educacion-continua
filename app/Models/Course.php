@@ -44,26 +44,16 @@ class Course extends Model
         return $this->hasMany(CourseRegistration::class);
     }
 
-    public function toArray()
+    public function getCostsAttribute(string $value): array
     {
-        $data = parent::toArray();
+        $costs = json_decode($value, associative: true);
 
-        if (count($data['schedules'] ?? []) > 0) {
-            $schedules = collect($data['schedules'])
-                ->groupBy('day')
-                ->toArray();
-
-            $data['schedules'] = $schedules;
+        if (count($costs) < 1) {
+            return [];
         }
 
-        if (count($data['costs'] ?? []) > 0) {
-            $costs = collect($data['costs'])
-                ->map(fn(int $cost) => '$' . number_format($cost))
-                ->toArray();
-
-            $data['costs'] = $costs;
-        }
-
-        return $data;
+        return collect($costs)
+            ->map(fn(int $cost) => '$' . number_format($cost))
+            ->toArray();
     }
 }

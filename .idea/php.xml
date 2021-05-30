@@ -113,8 +113,6 @@
       <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
       <path value="$PROJECT_DIR$/vendor/laravel/fortify" />
-      <path value="$PROJECT_DIR$/vendor/radio/radio" />
-      <path value="$PROJECT_DIR$/vendor/spatie/laravel-package-tools" />
       <path value="$PROJECT_DIR$/vendor/blade-ui-kit/blade-heroicons" />
       <path value="$PROJECT_DIR$/vendor/blade-ui-kit/blade-icons" />
     </include_path>

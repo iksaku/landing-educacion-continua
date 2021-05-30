@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
         {{-- Styles --}}
+        @livewireStyles
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         @stack('styles')
     </head>
@@ -22,6 +23,8 @@
         @stack('dialogs')
 
         {{-- Scripts --}}
+        @livewireScripts
+        <script src="{{ mix('js/alpine.js') }}" defer></script>
         @stack('scripts')
     </body>
 </html>

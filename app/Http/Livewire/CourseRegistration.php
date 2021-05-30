@@ -1,59 +1,58 @@
 <?php
 
-namespace App\Http\Components;
+namespace App\Http\Livewire;
 
 use App\Models\Course;
-use Illuminate\Support\Facades\Validator;
+use App\Models\CourseRegistration as Registration;
+use Illuminate\Contracts\View\View;
 use Illuminate\Validation\ValidationException;
-use Radio\Concerns\WithEvents;
-use Radio\Radio;
+use Livewire\Component;
 
-class CourseRegistration
+class CourseRegistration extends Component
 {
-    use Radio;
-    use WithEvents;
+    public ?int $course_id = null;
+    public Registration $registration;
 
-    public array $data = [
-        'course_id' => null,
-        'name' => null,
-        'email' => null,
-        'age' => null,
-        'phone' => null,
+    public function mount(): void
+    {
+        $this->registration = Registration::make();
+    }
+
+    protected array $rules = [
+        'course_id' => ['required', 'integer'],
+        'registration.name' => ['required', 'string'],
+        'registration.email' => ['required', 'email'],
+        'registration.age' => ['required', 'integer', 'min:1'],
+        'registration.phone' => ['required', 'string'],
     ];
 
     public function register(): void
     {
-        Validator::validate($this->data, [
-            'course_id' => ['required', 'integer'],
-            'name' => ['required', 'string'],
-            'email' => ['required', 'email'],
-            'age' => ['required', 'integer', 'min:1'],
-            'phone' => ['required', 'string']
-        ], [
+        $this->validate(messages: [
             'course_id' => [
                 'required' => 'Por favor ingresa el ID del curso al cual te deseas registrar.',
                 'integer' => 'No se ha encontrado el curso solicitado.'
             ],
-            'name' => [
+            'registration.name' => [
                 'required' => 'Por favor ingrese su nombre completo.',
                 'string' => 'Por favor ingrese su nombre completo.',
             ],
-            'email' => [
+            'registration.email' => [
                 'required' => 'Por favor ingrese su correo electrónico.',
                 'email' => 'El correo es inválido, por favor ingrese un correo válido.',
             ],
-            'age' => [
+            'registration.age' => [
                 'required' => 'Por favor ingrese su edad.',
                 'integer' => 'Por favor ingrese una edad válida.',
                 'min' => 'Por favor ingrese una edad válida.',
             ],
-            'phone' => [
+            'registration.phone' => [
                 'required' => 'Por favor ingrese su número telefónico.',
                 'string' => 'Por favor ingrese su número telefónico.',
             ],
         ]);
 
-        $course = Course::find($this->data['course_id']);
+        $course = Course::find($this->course_id);
 
         if ($course === null) {
             throw ValidationException::withMessages([
@@ -61,22 +60,20 @@ class CourseRegistration
             ]);
         }
 
-        $registration = $course->registrations()->firstOrNew(
-            ['email' => $this->data['email']],
-            array_intersect_key(
-                $this->data,
-                array_flip(['name', 'age', 'phone'])
-            )
-        );
-
-        if ($registration->exists) {
+        if ($course->registrations()->whereEmail($this->registration->email)->exists()) {
             throw ValidationException::withMessages([
                 'email' => ['Ya se ha registrado este email anteriormente para tomar el curso.']
             ]);
         }
 
-        $registration->save();
+        $course->registrations()->save($this->registration);
+        $this->registration = Registration::make();
 
-        $this->dispatchEvent('successful-registration');
+        $this->dispatchBrowserEvent('successful-registration');
+    }
+
+    public function render(): View
+    {
+        return view('livewire.course-registration');
     }
 }
