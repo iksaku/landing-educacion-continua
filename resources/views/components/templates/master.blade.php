@@ -20,7 +20,7 @@
     <body class="min-h-screen">
         {{ $slot }}
 
-        @stack('dialogs')
+        @stack('modals')
 
         {{-- Scripts --}}
         @livewireScripts

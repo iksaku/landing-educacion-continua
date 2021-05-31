@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Course;
+use App\Models\CourseRegistration;
 use App\Models\CourseType;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->seedCourses();
+
+        // Default admin account.
+        User::factory([
+            'email' => 'admin@example.com'
+        ])->create();
     }
 
     protected function seedCourses(): void
@@ -258,6 +265,11 @@ class DatabaseSeeder extends Seeder
                 ]);
 
                 $course->schedules()->createMany($courseData['schedules']);
+
+                CourseRegistration::factory()
+                    ->count(5)
+                    ->for($course)
+                    ->create();
             }
         }
     }

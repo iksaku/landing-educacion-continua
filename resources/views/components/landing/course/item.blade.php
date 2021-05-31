@@ -33,7 +33,7 @@
 </div>
 
 @once
-    @push('dialogs')
+    @push('modals')
         <livewire:course-information />
 
         <x-dialog.modal event="successful-registration">
