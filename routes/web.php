@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LandingController;
+use App\Http\Livewire\Dashboard\Index;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', LandingController::class)->name('index');
+
+Route::prefix('dashboard')->name('dashboard.')->middleware('auth')->group(function () {
+   Route::get('/', Index::class)
+       ->name('index');
+});

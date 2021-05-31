@@ -54,7 +54,7 @@
                     <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                         <div class="px-5 pt-4 flex items-center justify-between">
                             <div>
-                                <img class="w-auto h-8" src="{{ asset('img/logo.jpg') }}">
+                                <img class="w-auto h-8" src="{{ asset('img/logo.jpg') }}" alt="Educación Continua">
                             </div>
                             <div class="-mr-2">
                                 <button
